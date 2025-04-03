@@ -43,7 +43,7 @@
         .files-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             padding: 20px;
         }
 
@@ -63,13 +63,6 @@
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             background-color: #FF6F00;
-        }
-
-        .file-card img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 5px;
         }
 
         .file-card h3 {
@@ -151,52 +144,72 @@
             background-color: #e65c00;
         }
     </style>
+    <script>
+        function increaseViewCount(id) {
+            let count = localStorage.getItem(id) || 0;
+            count++;
+            localStorage.setItem(id, count);
+            document.getElementById(id).innerText = `Просмотров: ${count}`;
+            updateFileOrder();
+        }
+
+        function updateFileOrder() {
+            const filesContainer = document.querySelector('.files-container');
+            let fileCards = Array.from(filesContainer.children);
+            fileCards.sort((a, b) => {
+                let aViews = parseInt(localStorage.getItem(a.id)) || 0;
+                let bViews = parseInt(localStorage.getItem(b.id)) || 0;
+                return bViews - aViews;
+            });
+            fileCards.forEach(card => filesContainer.appendChild(card));
+        }
+    </script>
 </head>
 <body>
     <div class="header">Все начинается сегодня - прокачивай свои мозги</div>
-    
+
     <div class="files-container">
-        <div class="file-card">
-            <img src="path/to/your/image1.jpg" alt="AI for Sales">
+        <div class="file-card" id="file1">
             <h3>AI for Sales</h3>
             <p>PDF Документ</p>
-            <a href="docs/AI_for_Sales_KZSalesHub.pdf" target="_blank">Скачать</a>
+            <a href="docs/AI_for_Sales_KZSalesHub.pdf" target="_blank" onclick="increaseViewCount('file1')">Скачать</a>
+            <div id="views1">Просмотров: 0</div>
         </div>
-        <div class="file-card">
-            <img src="path/to/your/image2.jpg" alt="MEDDIC Strategic Selling">
+        <div class="file-card" id="file2">
             <h3>MEDDIC Strategic Selling</h3>
             <p>PDF Документ</p>
-            <a href="docs/MEDDIC_Strategic_Selling_KZSalesHub.pdf" target="_blank">Скачать</a>
+            <a href="docs/MEDDIC_Strategic_Selling_KZSalesHub.pdf" target="_blank" onclick="increaseViewCount('file2')">Скачать</a>
+            <div id="views2">Просмотров: 0</div>
         </div>
-        <div class="file-card">
-            <img src="path/to/your/image3.jpg" alt="Promt Sales">
+        <div class="file-card" id="file3">
             <h3>Promt Sales</h3>
             <p>PDF Документ</p>
-            <a href="docs/Promt_Sales_KZSalesHub.pdf" target="_blank">Скачать</a>
+            <a href="docs/Promt_Sales_KZSalesHub.pdf" target="_blank" onclick="increaseViewCount('file3')">Скачать</a>
+            <div id="views3">Просмотров: 0</div>
         </div>
-        <div class="file-card">
-            <img src="path/to/your/image4.jpg" alt="Telegram B2B Sales">
+        <div class="file-card" id="file4">
             <h3>Telegram B2B Sales</h3>
             <p>PDF Документ</p>
-            <a href="docs/Telegram_B2B_Sales_KZSalesHub.pdf" target="_blank">Скачать</a>
+            <a href="docs/Telegram_B2B_Sales_KZSalesHub.pdf" target="_blank" onclick="increaseViewCount('file4')">Скачать</a>
+            <div id="views4">Просмотров: 0</div>
         </div>
-        <div class="file-card">
-            <img src="path/to/your/image5.jpg" alt="Примерный файл">
+        <div class="file-card" id="file5">
             <h3>Примерный файл</h3>
             <p>PDF Документ</p>
-            <a href="docs/sample.pdf" target="_blank">Скачать</a>
+            <a href="docs/sample.pdf" target="_blank" onclick="increaseViewCount('file5')">Скачать</a>
+            <div id="views5">Просмотров: 0</div>
         </div>
-        <div class="file-card">
-            <img src="path/to/your/image6.jpg" alt="Кодекс продаж">
+        <div class="file-card" id="file6">
             <h3>Кодекс продаж</h3>
             <p>PDF Документ</p>
-            <a href="docs/Кодекс_продаж_KZSalesHub.pdf" target="_blank">Скачать</a>
+            <a href="docs/Кодекс_продаж_KZSalesHub.pdf" target="_blank" onclick="increaseViewCount('file6')">Скачать</a>
+            <div id="views6">Просмотров: 0</div>
         </div>
-        <div class="file-card">
-            <img src="path/to/your/image7.jpg" alt="Почему CEO и топ-менеджеры должны вести соцсети">
+        <div class="file-card" id="file7">
             <h3>Почему CEO и топ-менеджеры должны вести соцсети</h3>
             <p>PDF Документ</p>
-            <a href="docs/Почему_CEO_и_топ_менеджеры_должны_вести_соцсети.pdf" target="_blank">Скачать</a>
+            <a href="docs/Почему_CEO_и_топ_менеджеры_должны_вести_соцсети.pdf" target="_blank" onclick="increaseViewCount('file7')">Скачать</a>
+            <div id="views7">Просмотров: 0</div>
         </div>
     </div>
 
@@ -207,7 +220,7 @@
 
     <div class="form-widget">
         <h3>Дай идеи и рекомендации</h3>
-        <form action="https://formspree.io/kzsaleshub@gmail.com" method="POST">
+        <form action="mailto:kzsaleshub@gmail.com" method="POST" enctype="text/plain">
             <input type="text" name="name" placeholder="Ваше имя" required>
             <textarea name="message" placeholder="Ваши предложения" required></textarea>
             <button type="submit">Отправить</button>
