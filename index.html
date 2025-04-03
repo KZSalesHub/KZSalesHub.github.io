@@ -5,106 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KZSalesHub - ИТ Продажи</title>
     <style>
+        /* Общий стиль */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: white;
+            line-height: 1.6;
         }
+
+        /* Заголовок */
         .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #008000;
+            background-color: #4CAF50;
             color: white;
+            padding: 15px 0;
+            text-align: center;
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 600;
         }
-        .nav {
-            display: flex;
-            justify-content: center;
-            background-color: #111;
-            padding: 10px;
-        }
-        .nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        .file-list {
-            background-color: #222;
-            padding: 20px;
-            width: 100%;
-            max-width: 900px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            margin-bottom: 20px;
-        }
-        .file-item {
+
+        /* Навигация */
+        .navbar {
             background-color: #333;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
             text-align: center;
+            padding: 10px 0;
         }
-        .file-item a {
-            color: #FFA500; /* оранжевый цвет */
-            font-size: 18px;
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
             text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
         }
-        .file-item a:hover {
-            text-decoration: underline;
+
+        .navbar a:hover {
+            background-color: #575757;
+            color: white;
         }
+
+        /* Контейнер для контента */
+        .container {
+            padding: 30px 10%;
+        }
+
+        /* Ссылки для файлов */
+        .file-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .file-list li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-list li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .file-list li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Социальные сети */
         .socials {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
-        .socials img {
-            width: 40px;
-            margin: 0 10px;
-            cursor: pointer;
+
+        .socials a {
+            margin: 0 15px;
+            display: inline-block;
+            font-size: 30px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            color: #4CAF50;
+        }
+
+        /* Подвал */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="header">KZSalesHub - ИТ Продажи</div>
-    <div class="nav">
-        <a href="#">Главная</a>
-        <a href="#files">Файлы</a>
-        <a href="#news">Новости</a>
-        <a href="#about">О нас</a>
+
+    <div class="header">
+        KZSalesHub - ИТ Продажи
     </div>
-    
+
+    <div class="navbar">
+        <a href="#home">Главная</a>
+        <a href="#files">Файлы</a>
+    </div>
+
     <div class="container">
-        <div class="file-list" id="files">
-            <h2>Доступные файлы:</h2>
-            <!-- Пример файлов, которые будут отображаться -->
-            <div class="file-item">
-                <a href="docs/sample1.pdf" target="_blank">Документ 1 - Отчет по продажам (PDF)</a>
-            </div>
-            <div class="file-item">
-                <a href="docs/sample2.pdf" target="_blank">Документ 2 - Презентация нового продукта (PDF)</a>
-            </div>
-            <div class="file-item">
-                <a href="docs/sample3.pdf" target="_blank">Документ 3 - Руководство по использованию (PDF)</a>
-            </div>
+        <div id="files">
+            <h2>Доступные файлы</h2>
+            <ul class="file-list">
+                <li><a href="docs/sample1.pdf" target="_blank">Отчет по продажам (PDF)</a></li>
+                <li><a href="docs/sample2.pdf" target="_blank">Презентация нового продукта (PDF)</a></li>
+                <li><a href="docs/sample3.pdf" target="_blank">Руководство по использованию системы (PDF)</a></li>
+            </ul>
         </div>
     </div>
 
     <div class="socials">
-        <a href="https://t.me/yourchannel" target="_blank"><img src="docs/telegram.png" alt="Telegram"></a>
-        <a href="https://vk.com/yourpage" target="_blank"><img src="docs/vk.png" alt="VK"></a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="docs/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://t.me/yourchannel" target="_blank">Telegram</a>
+        <a href="https://hashnode.com/@yourprofile" target="_blank">Hashnode</a>
     </div>
+
+    <div class="footer">
+        <p>&copy; 2025 KZSalesHub - Все права защищены</p>
+    </div>
+
 </body>
 </html>
