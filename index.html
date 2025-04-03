@@ -3,147 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KZSalesHub - все об ИТ Продажах</title>
+    <title>KZSalesHub - Все об ИТ Продажах</title>
     <style>
-        /* Общий стиль */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background-color: #fff;
+            color: #333;
         }
 
-        /* Заголовок */
         .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 0;
             text-align: center;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        /* Навигация */
-        .navbar {
-            background-color: #333;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .navbar a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 18px;
-        }
-
-        .navbar a:hover {
-            background-color: #575757;
-            color: white;
-        }
-
-        /* Стили для оранжевого цвета в навигации */
-        .navbar .active {
-            color: #FF8C00;
-        }
-
-        /* Контейнер для контента */
-        .container {
-            padding: 30px 10%;
-        }
-
-        /* Ссылки для файлов */
-        .file-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .file-list li {
-            background-color: #f9f9f9;
-            margin: 10px 0;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .file-list li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        .file-list li a:hover {
-            color: #4CAF50;
-        }
-
-        /* Социальные сети */
-        .socials {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .socials a {
-            margin: 0 15px;
-            display: inline-block;
-            font-size: 30px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .socials a:hover {
-            color: #4CAF50;
-        }
-
-        /* Подвал */
-        .footer {
-            background-color: #333;
+            background-color: #008000;
             color: white;
-            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
             padding: 10px;
-            position: fixed;
-            bottom: 0;
+        }
+
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .files-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .file-card {
+            background-color: #f4f4f4;
+            width: 220px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .file-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .file-card img {
             width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .file-card h3 {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .file-card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .file-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #008000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .file-card a:hover {
+            background-color: #006400;
         }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        KZSalesHub - все об ИТ Продажах
+    <div class="header">KZSalesHub - Все об ИТ Продажах</div>
+    
+    <div class="nav">
+        <a href="#">Главная</a>
+        <a href="#">Файлы</a>
     </div>
-
-    <div class="navbar">
-        <a href="#home" class="active">Главная</a>
-        <a href="#files">Файлы</a>
-    </div>
-
-    <div class="container">
-        <div id="files">
-            <h2>Доступные файлы</h2>
-            <ul class="file-list">
-                <li><a href="docs/AI for Sales KZSalesHub.pdf" target="_blank">AI for Sales (PDF)</a></li>
-                <li><a href="docs/MEDDIC Strategic Selling KZSalesHub.pdf" target="_blank">MEDDIC Strategic Selling (PDF)</a></li>
-                <li><a href="docs/Promt Sales SalesHUB.pdf" target="_blank">Promt Sales (PDF)</a></li>
-                <li><a href="docs/Telegram B2B Sales.pdf" target="_blank">Telegram B2B Sales (PDF)</a></li>
-                <li><a href="docs/sample.pdf" target="_blank">Примерный файл (PDF)</a></li>
-                <li><a href="docs/Кодекс продаж KZSalesHub.pdf" target="_blank">Кодекс продаж (PDF)</a></li>
-                <li><a href="docs/Почему_CEO_и_топ_менеджеры_должны_вести_соцсети.pdf" target="_blank">Почему CEO и топ-менеджеры должны вести соцсети (PDF)</a></li>
-                <li><a href="docs/Эффективные техники продаж в IT.pdf" target="_blank">Эффективные техники продаж в IT (PDF)</a></li>
-            </ul>
+    
+    <div class="files-container">
+        <div class="file-card">
+            <img src="path/to/your/image1.jpg" alt="AI for Sales">
+            <h3>AI for Sales</h3>
+            <p>PDF Документ</p>
+            <a href="docs/AI_for_Sales_KZSalesHub.pdf" target="_blank">Скачать</a>
         </div>
-    </div>
-
-    <div class="socials">
-        <a href="https://t.me/kzsaleshub" target="_blank">Telegram</a>
-        <a href="https://hashnode.com/@KZSalesHub" target="_blank">Hashnode</a>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2025 KZSalesHub - Все права защищены</p>
+        <div class="file-card">
+            <img src="path/to/your/image2.jpg" alt="MEDDIC Strategic Selling">
+            <h3>MEDDIC Strategic Selling</h3>
+            <p>PDF Документ</p>
+            <a href="docs/MEDDIC_Strategic_Selling_KZSalesHub.pdf" target="_blank">Скачать</a>
+        </div>
+        <div class="file-card">
+            <img src="path/to/your/image3.jpg" alt="Promt Sales">
+            <h3>Promt Sales</h3>
+            <p>PDF Документ</p>
+            <a href="docs/Promt_Sales_KZSalesHub.pdf" target="_blank">Скачать</a>
+        </div>
+        <div class="file-card">
+            <img src="path/to/your/image4.jpg" alt="Telegram B2B Sales">
+            <h3>Telegram B2B Sales</h3>
+            <p>PDF Документ</p>
+            <a href="docs/Telegram_B2B_Sales_KZSalesHub.pdf" target="_blank">Скачать</a>
+        </div>
+        <div class="file-card">
+            <img src="path/to/your/image5.jpg" alt="Примерный файл">
+            <h3>Примерный файл</h3>
+            <p>PDF Документ</p>
+            <a href="docs/sample.pdf" target="_blank">Скачать</a>
+        </div>
+        <div class="file-card">
+            <img src="path/to/your/image6.jpg" alt="Кодекс продаж">
+            <h3>Кодекс продаж</h3>
+            <p>PDF Документ</p>
+            <a href="docs/Кодекс_продаж_KZSalesHub.pdf" target="_blank">Скачать</a>
+        </div>
+        <div class="file-card">
+            <img src="path/to/your/image7.jpg" alt="Почему CEO и топ-менеджеры должны вести соцсети">
+            <h3>Почему CEO и топ-менеджеры должны вести соцсети</h3>
+            <p>PDF Документ</p>
+            <a href="docs/Почему_CEO_и_топ_менеджеры_должны_вести_соцсети.pdf" target="_blank">Скачать</a>
+        </div>
     </div>
 
 </body>
